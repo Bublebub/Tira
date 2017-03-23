@@ -15,7 +15,7 @@ public class MyArray {
         createMyArray();
     }
     
-    void createMyArray() {
+    final void createMyArray() {
         
         //Alustus 1. solmu/solu, id = 0
         this.start.setID(0);
@@ -43,6 +43,7 @@ public class MyArray {
         
     }
     
+    //print array element id's
     public void printMyArray() {
         
         next = this.start.getNext();

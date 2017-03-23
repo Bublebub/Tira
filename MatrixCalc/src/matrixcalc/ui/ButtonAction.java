@@ -14,7 +14,7 @@ public class ButtonAction implements ActionListener {
     Matrix a, b;
     
     
-    public void ButtonAction(EventHandler eh, int eventNumber, Matrix a, Matrix b) {
+    public ButtonAction(EventHandler eh, int eventNumber, Matrix a, Matrix b) {
         this.logic = eh;
         this.event = eventNumber;
         this.a = a;

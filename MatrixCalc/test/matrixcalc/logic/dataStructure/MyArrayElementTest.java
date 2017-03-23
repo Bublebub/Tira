@@ -1,5 +1,5 @@
 
-package matrixcalc.logic.dataStructureTest;
+package matrixcalc.logic.dataStructure;
 
 
 public class MyArrayElementTest {
