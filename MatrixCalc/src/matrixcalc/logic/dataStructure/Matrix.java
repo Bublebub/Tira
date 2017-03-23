@@ -1,5 +1,5 @@
 
-package matrixcalc.logic;
+package matrixcalc.logic.dataStructure;
 
 
 public class Matrix {

@@ -5,11 +5,13 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import matrixcalc.logic.EventHandler;
 
 
 public class UserInterface implements Runnable{
 
     JFrame frame;
+    EventHandler logic;
     
     //Textfields for matrix cells (3x3)
     JTextField a11, a12, a13,
@@ -23,6 +25,11 @@ public class UserInterface implements Runnable{
     //Temporary array for matrix cell creation
     JTextField[] cellContainer = {a11, a12, a13, a21, a22, a23, a31, a32, a33, 
                                   b11, b12, b13, b21, b22, b23, b31, b32, b33};
+    
+    //Connect logic and ui structures
+    public void UserInterface(EventHandler eh) {
+        this.logic = eh;
+    }
     
     @Override
     public void run() {
