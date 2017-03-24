@@ -26,7 +26,6 @@ public class ButtonAction implements ActionListener {
         
         this.logic.handleEvent(this.event, this.a, this.b);
         
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

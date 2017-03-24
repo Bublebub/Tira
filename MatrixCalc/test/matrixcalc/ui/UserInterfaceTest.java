@@ -60,7 +60,7 @@ public class UserInterfaceTest {
         System.out.println("createMatrixCells");
         JFrame frame = null;
         UserInterface instance = null;
-        instance.createMatrixCells(frame);
+        instance.createMatrixElements(frame);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

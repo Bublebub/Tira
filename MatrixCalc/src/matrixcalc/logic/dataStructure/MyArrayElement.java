@@ -6,12 +6,12 @@ public class MyArrayElement {
     int id, value;
     MyArrayElement next;
     
-    //Prints elements id
-    
+    /**
+     * Prints elements ID
+     */
     public void printID() {
         System.out.println(this.id);
     }
-    
     
     //Setters
     

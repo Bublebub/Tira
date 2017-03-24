@@ -6,6 +6,14 @@ import matrixcalc.logic.dataStructure.Matrix;
 
 public class EventHandler {
     
+    
+    /**
+     * Handles events from UI (button presses)
+     * 
+     * @param event integer, which is used to identify given command
+     * @param a first Matrix
+     * @param b second Matrix
+     */
     public void handleEvent(int event, Matrix a, Matrix b) {
         switch (event) {
             case 0:

@@ -4,6 +4,9 @@ package matrixcalc.logic.dataStructure;
 
 public class Matrix {
     
+    /**
+     * Data structure for matrix
+     */
     public Matrix() {
         
         //Create cells for values

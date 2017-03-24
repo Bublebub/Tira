@@ -15,10 +15,12 @@ public class MyArray {
         createMyArray();
     }
     
-    //Creates the array elements !! Note to self: REMEMBER TO ADD VALUES !!
+    /**
+     * Creates the array elements !! Note to self: REMEMBER TO ADD VALUES !!
+     */
     final void createMyArray() {
         
-        //setup
+        //Setup
         this.start.setID(0);
         prev = this.start;
         
@@ -44,7 +46,9 @@ public class MyArray {
         
     }
     
-    //print array element id's
+    /**
+     * Prints array element ID's
+     */
     public void printMyArray() {
         
         next = this.start.getNext();
@@ -60,7 +64,12 @@ public class MyArray {
         
     }
     
-    //Return null if not found
+    /**
+     * Gets element pointed by given ID
+     * 
+     * @param id ID used to find the corresponding element
+     * @return element by given id, null if not found
+     */
     public MyArrayElement getElementByNumber(int id) {
         
         if (id > this.size || id <= 0) {
@@ -71,20 +80,16 @@ public class MyArray {
         id--;
         
         if (this.start.getID() == id) {
-            
             return this.start;
             
         } else {
-            
             next = this.start.getNext();
             
             while (next != null) {
                 
                 if (next.id == id) {
-                    
                     return next;
                 }
-                
                 next = next.getNext();
                 
             }

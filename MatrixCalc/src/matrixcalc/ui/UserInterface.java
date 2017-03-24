@@ -36,7 +36,11 @@ public class UserInterface implements Runnable{
             mulBtn = new JButton("*"), 
             detBtn = new JButton("det");
     
-    //Connect logic and ui structures
+    /**
+     * Constructor, that connects program logic and UI
+     * 
+     * @param eh Handles command logic
+     */
     public UserInterface(EventHandler eh) {
         this.logic = eh;
     }
@@ -54,7 +58,7 @@ public class UserInterface implements Runnable{
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
         //Create visible Matrix cells (JTextFields)
-        createMatrixCells(frame);
+        createMatrixElements(frame);
         createButtons(frame, this.logic, a, b);
         
         frame.setVisible(true);
@@ -63,7 +67,12 @@ public class UserInterface implements Runnable{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    void createMatrixCells(JFrame frame) {
+    /**
+     * Creates editable Matrix elements to given JFrame
+     * 
+     * @param frame JFrame, where elements (JTextfields) are assigned to
+     */
+    void createMatrixElements(JFrame frame) {
         
         //Cells x and y coordinations
         int x = 40;
@@ -72,8 +81,8 @@ public class UserInterface implements Runnable{
         //Used to assign cells to right rows
         int rowCounter = 0;
         
-        //Creates each cell to specific row and adds them to JFrame
-        for (JTextField cell : cellContainer) {
+        //Creates each element to specific row and adds them to JFrame
+        for (JTextField element : cellContainer) {
             
             //Sets correct coordinates for each cell
             if (rowCounter == 3 || rowCounter == 6) {
@@ -88,13 +97,13 @@ public class UserInterface implements Runnable{
             }
             
             //Create new cell
-            cell = new JTextField();
+            element = new JTextField();
             
             //Set cell coordinates
-            cell.setBounds(x, y, 35, 25);
+            element.setBounds(x, y, 35, 25);
             
             //Add cell to JFrame
-            frame.add(cell);
+            frame.add(element);
             
             //Change new coordinates and row number
             x += 50;
@@ -103,12 +112,27 @@ public class UserInterface implements Runnable{
         
     }
     
+    /**
+     * Combines functions to create Buttons to given JFrame
+     * 
+     * @param frame JFrame, where buttons are assigned to
+     * @param eh EventHandler, that handles button events
+     * @param a first Matrix
+     * @param b second Matrix
+     */
     void createButtons(JFrame frame, EventHandler eh, Matrix a, Matrix b) {
         addButtonLogic(eh, a, b);
         buttonPositionSetup();
         addButtonsToFrame(frame);
     }
     
+    /**
+     * Adds actionlisteners to buttons
+     * 
+     * @param eh EventHandler, that handles button events
+     * @param a first Matrix
+     * @param b second Matrix
+     */
     void addButtonLogic(EventHandler eh, Matrix a, Matrix b) {
         addBtn.addActionListener(new ButtonAction(eh, 0, a, b));
         subBtn.addActionListener(new ButtonAction(eh, 1, a, b));
@@ -116,6 +140,9 @@ public class UserInterface implements Runnable{
         detBtn.addActionListener(new ButtonAction(eh, 3, a, b));
     }
     
+    /**
+     * Sets button positions
+     */
     void buttonPositionSetup() {
         addBtn.setBounds(20, 200, 45, 40);
         subBtn.setBounds(80, 200, 45, 40);
@@ -123,6 +150,11 @@ public class UserInterface implements Runnable{
         detBtn.setBounds(180, 200, 70, 40);
     }
     
+    /**
+     * Adds buttons to given frame
+     * 
+     * @param frame JFrame, where buttons are assigned to
+     */
     void addButtonsToFrame(JFrame frame) {
         frame.add(addBtn);
         frame.add(subBtn);
