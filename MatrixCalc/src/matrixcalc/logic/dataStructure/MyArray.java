@@ -15,9 +15,10 @@ public class MyArray {
         createMyArray();
     }
     
+    //Creates the array elements !! Note to self: REMEMBER TO ADD VALUES !!
     final void createMyArray() {
         
-        //Alustus 1. solmu/solu, id = 0
+        //setup
         this.start.setID(0);
         prev = this.start;
         
@@ -25,14 +26,14 @@ public class MyArray {
             
             while (this.helper < size) {
                 
-                //Luodaan uusi solu, id = 1
+                //Create new cell, id = 1
                 next = new MyArrayElement();
                 next.setID(this.helper);
                 
-                //Asetetaan edellisen solmun jatkoksi
+                //Set as next element of the previous
                 prev.setNext(next);
                 
-                //Asetetaan osoittamaan uuteen solmuun
+                //Set prev to point to "present" element
                 prev = next;
                 
                 this.helper++;
