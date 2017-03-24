@@ -85,15 +85,23 @@ public class UserInterface implements Runnable{
         for (JTextField element : cellContainer) {
             
             //Sets correct coordinates for each cell
-            if (rowCounter == 3 || rowCounter == 6) {
-                y += 35;
-                x = 40;
-            } else if (rowCounter == 9){
-                y = 40;
-                x = 225;
-            } else if (rowCounter == 12 || rowCounter == 15) {
-                y += 35;
-                x = 225;
+            switch (rowCounter) {
+                case 3:
+                case 6:
+                    y += 35;
+                    x = 40;
+                    break;
+                case 9:
+                    y = 40;
+                    x = 225;
+                    break;
+                case 12:
+                case 15:
+                    y += 35;
+                    x = 225;
+                    break;
+                default:
+                    break;
             }
             
             //Create new cell

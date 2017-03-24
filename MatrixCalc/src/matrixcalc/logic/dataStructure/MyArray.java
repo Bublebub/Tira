@@ -6,7 +6,11 @@ public class MyArray {
     int size, helper;
     MyArrayElement start, prev, next;
     
-    
+    /**
+     * Contructor, that creates an array of the given size
+     * 
+     * @param size array size, number of elements
+     */
     public MyArray(int size) {
         this.size = size;
         this.helper = 1;
