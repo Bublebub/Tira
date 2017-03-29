@@ -95,7 +95,7 @@ public class UserInterface implements Runnable{
         //Used to switch x and y values for matrix b
         int help = 0;
         
-        for (JTextField[] elementRow : calculationElements) {
+        for (JTextField[] elementRow : this.calculationElements) {
             
             for (JTextField element : elementRow) {
                 
@@ -137,7 +137,7 @@ public class UserInterface implements Runnable{
         int x = 425;
         int y = 40;
         
-        for (JTextArea[] elementRow  : resultElements) {
+        for (JTextArea[] elementRow  : this.resultElements) {
             
             for (JTextArea element : elementRow) {
                 element = new JTextArea();
@@ -147,6 +147,7 @@ public class UserInterface implements Runnable{
                 element.setBounds(x, y, 35, 25);
             
                 frame.add(element);
+                
                 x += 50;
             }
             y += 35;
@@ -180,10 +181,10 @@ public class UserInterface implements Runnable{
      * @param b second Matrix
      */
     void addButtonLogic(EventHandler eh, UserInterface ui) {
-        addBtn.addActionListener(new ButtonAction(eh, 0, this.resultElements));
-        subBtn.addActionListener(new ButtonAction(eh, 1, this.resultElements));
-        mulBtn.addActionListener(new ButtonAction(eh, 2, this.resultElements));
-        detBtn.addActionListener(new ButtonAction(eh, 3, this.resultElements));
+        addBtn.addActionListener(new ButtonAction(eh, 0, this));
+        subBtn.addActionListener(new ButtonAction(eh, 1, this));
+        mulBtn.addActionListener(new ButtonAction(eh, 2, this));
+        detBtn.addActionListener(new ButtonAction(eh, 3, this));
     }
     
     /**
@@ -208,7 +209,12 @@ public class UserInterface implements Runnable{
         frame.add(detBtn);
     }
     
+    public JTextField[][] getCalculationElements(){
+        return this.calculationElements;
+    }
     
-    
+    public JTextArea[][] getResultElements() {
+        return this.resultElements;
+    }
     
 }

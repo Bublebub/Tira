@@ -16,6 +16,7 @@ public class EventHandler {
      * @param event integer, which is used to identify given command
      * @param a first Matrix
      * @param b second Matrix
+     * @param resultMatrix contains JTextAreas, where the result of calculation will be written
      */
     public void handleEvent(int event, int[][] a, int[][] b, JTextArea[][] resultMatrix) {
         
