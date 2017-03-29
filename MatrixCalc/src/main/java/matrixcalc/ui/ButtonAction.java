@@ -3,7 +3,6 @@ package matrixcalc.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import matrixcalc.logic.EventHandler;
 
@@ -37,7 +36,9 @@ public class ButtonAction implements ActionListener {
             
             for (JTextField element : elementRow) {
                 
-                temp[x][y] = Integer.parseInt(element.getText());
+                String text = element.getText();
+                
+                temp[x][y] = Integer.parseInt(text);
                 
                 //Change element
                 x++;

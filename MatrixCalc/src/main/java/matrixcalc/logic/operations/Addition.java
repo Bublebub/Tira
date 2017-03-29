@@ -36,7 +36,7 @@ public class Addition {
         for (JTextArea[] elementRow : this.resultMatrix) {
             
             for (JTextArea element : elementRow) {
-                element.setText(Integer.toString(this.result[x][y]));
+                //element.setText(Integer.toString(this.result[x][y]));
                 x++;
             }
             y++;
