@@ -1,0 +1,11 @@
+matrixcalc\logic\dataStructure\MyArrayTest.class
+matrixcalc\logic\operations\SubtractionTest.class
+matrixcalc\logic\dataStructure\MyArrayElementTest.class
+matrixcalc\ui\UserInterfaceTest.class
+matrixcalc\logic\EventHandlerTest.class
+matrixcalc\ui\ButtonActionTest.class
+matrixcalc\logic\operations\AdditionTest.class
+matrixcalc\MainTest.class
+matrixcalc\logic\operations\MultiplicationTest.class
+matrixcalc\logic\operations\DeterminantTest.class
+matrixcalc\logic\dataStructure\MatrixTest.class

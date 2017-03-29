@@ -12,6 +12,8 @@ public class Main {
     
     public static void main(String[] args) {
         
+        System.out.println("TESTI");
+        
         EventHandler logic = new EventHandler();
         
         UserInterface ui = new UserInterface(logic);

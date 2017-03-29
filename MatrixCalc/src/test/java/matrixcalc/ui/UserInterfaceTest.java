@@ -53,11 +53,11 @@ public class UserInterfaceTest {
     }
 
     /**
-     * Test of createMatrixCells method, of class UserInterface.
+     * Test of createMatrixElements method, of class UserInterface.
      */
     @Test
-    public void testCreateMatrixCells() {
-        System.out.println("createMatrixCells");
+    public void testCreateMatrixElements() {
+        System.out.println("createMatrixElements");
         JFrame frame = null;
         UserInterface instance = null;
         instance.createMatrixElements(frame);
