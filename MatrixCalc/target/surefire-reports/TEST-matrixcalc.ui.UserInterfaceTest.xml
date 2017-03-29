@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="matrixcalc.ui.UserInterfaceTest" time="0.009" errors="6" skipped="0">
+<testsuite tests="6" failures="0" name="matrixcalc.ui.UserInterfaceTest" time="0.013" errors="6" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -141,7 +141,7 @@
     <system-out>addButtonsToFrame
 </system-out>
   </testcase>
-  <testcase classname="matrixcalc.ui.UserInterfaceTest" name="testCreateButtons" time="0">
+  <testcase classname="matrixcalc.ui.UserInterfaceTest" name="testCreateButtons" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at matrixcalc.ui.UserInterfaceTest.testCreateButtons(UserInterfaceTest.java:79)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -221,7 +221,7 @@
     <system-out>buttonPositionSetup
 </system-out>
   </testcase>
-  <testcase classname="matrixcalc.ui.UserInterfaceTest" name="testCreateMatrixElements" time="0.001">
+  <testcase classname="matrixcalc.ui.UserInterfaceTest" name="testCreateMatrixElements" time="0">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at matrixcalc.ui.UserInterfaceTest.testCreateMatrixElements(UserInterfaceTest.java:63)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

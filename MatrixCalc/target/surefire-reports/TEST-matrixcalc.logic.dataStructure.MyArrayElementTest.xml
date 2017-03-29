@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="7" name="matrixcalc.logic.dataStructure.MyArrayElementTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="7" failures="7" name="matrixcalc.logic.dataStructure.MyArrayElementTest" time="0.066" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -102,7 +102,7 @@
     <system-out>getValue
 </system-out>
   </testcase>
-  <testcase classname="matrixcalc.logic.dataStructure.MyArrayElementTest" name="testGetID" time="0">
+  <testcase classname="matrixcalc.logic.dataStructure.MyArrayElementTest" name="testGetID" time="0.022">
     <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
 	at org.junit.Assert.fail(Assert.java:88)
 	at matrixcalc.logic.dataStructure.MyArrayElementTest.testGetID(MyArrayElementTest.java:102)
@@ -184,7 +184,7 @@
     <system-out>setID
 </system-out>
   </testcase>
-  <testcase classname="matrixcalc.logic.dataStructure.MyArrayElementTest" name="testPrintID" time="0.001">
+  <testcase classname="matrixcalc.logic.dataStructure.MyArrayElementTest" name="testPrintID" time="0">
     <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
 	at org.junit.Assert.fail(Assert.java:88)
 	at matrixcalc.logic.dataStructure.MyArrayElementTest.testPrintID(MyArrayElementTest.java:49)

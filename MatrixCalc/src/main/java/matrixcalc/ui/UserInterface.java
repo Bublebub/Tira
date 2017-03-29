@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import matrixcalc.logic.EventHandler;
 import javax.swing.JButton;
-import matrixcalc.logic.dataStructure.Matrix;
+import javax.swing.JTextArea;
 
 
 public class UserInterface implements Runnable{
@@ -15,9 +15,7 @@ public class UserInterface implements Runnable{
     JFrame frame;
     EventHandler logic;
     
-    Matrix a, b;
-    
-    //Textfields for matrix cells (3x3)
+    //Textfields for matrix elements (a & b , 3x3)
     JTextField a11, a12, a13,
                a21, a22, a23,
                a31, a32, a33,
@@ -26,9 +24,18 @@ public class UserInterface implements Runnable{
                b21, b22, b23,
                b31, b32, b33;
     
-    //Temporary array for matrix cell creation
-    JTextField[] cellContainer = {a11, a12, a13, a21, a22, a23, a31, a32, a33, 
+    //Temporary array for editable matrix element creation ( a & b )
+    JTextField[] elementContainer = {a11, a12, a13, a21, a22, a23, a31, a32, a33, 
                                   b11, b12, b13, b21, b22, b23, b31, b32, b33};
+    
+    //Textareas for result matrix ( c , 3x3 )
+    JTextArea c11, c12, c13, 
+              c21, c22, c23, 
+              c31, c32, c33;
+    
+    //Temporary array for result matrix creation ( c )
+    JTextArea[] resultElements = {c11, c12, c13, c21, c22, c23, c31, c32, c33};
+    
     
     //Buttons for operations
     JButton addBtn = new JButton("+"), 
@@ -59,7 +66,8 @@ public class UserInterface implements Runnable{
         
         //Create visible Matrix cells (JTextFields)
         createMatrixElements(frame);
-        createButtons(frame, this.logic, a, b);
+        createResultTextAreas(frame);
+        createButtons(frame, this.logic, this);
         
         frame.setVisible(true);
         
@@ -68,7 +76,7 @@ public class UserInterface implements Runnable{
     }
     
     /**
-     * Creates editable Matrix elements to given JFrame
+     * Creates editable matrix elements to given JFrame
      * 
      * @param frame JFrame, where elements (JTextfields) are assigned to
      */
@@ -82,7 +90,7 @@ public class UserInterface implements Runnable{
         int rowCounter = 0;
         
         //Creates each element to specific row and adds them to JFrame
-        for (JTextField element : cellContainer) {
+        for (JTextField element : elementContainer) {
             
             //Sets correct coordinates for each cell
             switch (rowCounter) {
@@ -121,6 +129,35 @@ public class UserInterface implements Runnable{
     }
     
     /**
+     * Creates textareas for calculation result elements
+     * 
+     * @param frame JFrame, where elements (JTextAreas) are assigned to
+     */
+    void createResultTextAreas(JFrame frame) {
+        
+        int x = 425;
+        int y = 40;
+        
+        for (JTextArea element : resultElements) {
+            
+            if (x > 530){
+                y += 35;
+                x = 425;
+            }
+            
+            element = new JTextArea();
+            
+            element.setEditable(false);
+            
+            element.setBounds(x, y, 35, 25);
+            
+            frame.add(element);
+            
+            x += 50;
+        }
+    }
+    
+    /**
      * Combines functions to create Buttons to given JFrame
      * 
      * @param frame JFrame, where buttons are assigned to
@@ -128,8 +165,8 @@ public class UserInterface implements Runnable{
      * @param a first Matrix
      * @param b second Matrix
      */
-    void createButtons(JFrame frame, EventHandler eh, Matrix a, Matrix b) {
-        addButtonLogic(eh, a, b);
+    void createButtons(JFrame frame, EventHandler eh, UserInterface ui) {
+        addButtonLogic(eh, ui);
         buttonPositionSetup();
         addButtonsToFrame(frame);
     }
@@ -137,15 +174,18 @@ public class UserInterface implements Runnable{
     /**
      * Adds actionlisteners to buttons
      * 
+     * VALUES: 0 = addition, 1 = subtraction, 2 = multiplication, 3 = determinant
+     * Note to self; change values to constants!
+     * 
      * @param eh EventHandler, that handles button events
      * @param a first Matrix
      * @param b second Matrix
      */
-    void addButtonLogic(EventHandler eh, Matrix a, Matrix b) {
-        addBtn.addActionListener(new ButtonAction(eh, 0, a, b));
-        subBtn.addActionListener(new ButtonAction(eh, 1, a, b));
-        mulBtn.addActionListener(new ButtonAction(eh, 2, a, b));
-        detBtn.addActionListener(new ButtonAction(eh, 3, a, b));
+    void addButtonLogic(EventHandler eh, UserInterface ui) {
+        addBtn.addActionListener(new ButtonAction(eh, 0, ui));
+        subBtn.addActionListener(new ButtonAction(eh, 1, ui));
+        mulBtn.addActionListener(new ButtonAction(eh, 2, ui));
+        detBtn.addActionListener(new ButtonAction(eh, 3, ui));
     }
     
     /**
@@ -168,6 +208,15 @@ public class UserInterface implements Runnable{
         frame.add(subBtn);
         frame.add(mulBtn);
         frame.add(detBtn);
+    }
+    
+    
+    public JTextField[] getElementContainer() {
+        return this.elementContainer;
+    }
+    
+    public JTextArea[] getResultElements() {
+        return this.resultElements;
     }
     
 }

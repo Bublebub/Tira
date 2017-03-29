@@ -12,7 +12,6 @@ public class Main {
     
     public static void main(String[] args) {
         
-        System.out.println("TESTI");
         
         EventHandler logic = new EventHandler();
         
@@ -20,7 +19,7 @@ public class Main {
         
         ui.run();
         
-        MyArray ar = new MyArray(6);
+        /**MyArray ar = new MyArray(6);
         
         ar.printMyArray();
         
@@ -32,7 +31,7 @@ public class Main {
         } else {
             System.out.println("error");
         }
-        
+        **/
     }
     
 }

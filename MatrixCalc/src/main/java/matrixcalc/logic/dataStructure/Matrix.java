@@ -4,17 +4,21 @@ package matrixcalc.logic.dataStructure;
 
 public class Matrix {
     
-    /**
-     * Data structure for matrix
-     */
+    int[][] elements;
+    
+    
     public Matrix() {
+        this.elements = new int[3][3];
         
-        //Create cells for values
-        int c11, c12, c13,
-            c21, c22, c23,
-            c31, c32, c33;
+    }
+    
+    public void setElementValue(int x, int y, int value) {
+        this.elements[x][y] = value;
         
-        
+    }
+    
+    public int getElementValue(int x, int y) {
+        return this.elements[x][y];
         
     }
 }

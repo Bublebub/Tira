@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: matrixcalc.logic.dataStructure.MyArrayTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
 testPrintMyArray(matrixcalc.logic.dataStructure.MyArrayTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at matrixcalc.logic.dataStructure.MyArrayTest.testPrintMyArray(MyArrayTest.java:59)
@@ -74,7 +74,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testCreateMyArray(matrixcalc.logic.dataStructure.MyArrayTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testCreateMyArray(matrixcalc.logic.dataStructure.MyArrayTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at matrixcalc.logic.dataStructure.MyArrayTest.testCreateMyArray(MyArrayTest.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

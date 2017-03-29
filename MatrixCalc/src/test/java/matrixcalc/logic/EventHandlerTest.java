@@ -6,6 +6,7 @@
 package matrixcalc.logic;
 
 import matrixcalc.logic.dataStructure.Matrix;
+import matrixcalc.ui.UserInterface;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -48,7 +49,8 @@ public class EventHandlerTest {
         Matrix a = null;
         Matrix b = null;
         EventHandler instance = new EventHandler();
-        instance.handleEvent(event, a, b);
+        UserInterface ui = null;
+        instance.handleEvent(event, a, b, ui);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

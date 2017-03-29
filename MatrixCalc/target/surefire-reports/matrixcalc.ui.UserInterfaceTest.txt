@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: matrixcalc.ui.UserInterfaceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE!
 testRun(matrixcalc.ui.UserInterfaceTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at matrixcalc.ui.UserInterfaceTest.testRun(UserInterfaceTest.java:50)
@@ -74,7 +74,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testCreateButtons(matrixcalc.ui.UserInterfaceTest)  Time elapsed: 0 sec  <<< ERROR!
+testCreateButtons(matrixcalc.ui.UserInterfaceTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
 	at matrixcalc.ui.UserInterfaceTest.testCreateButtons(UserInterfaceTest.java:79)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -146,7 +146,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testCreateMatrixElements(matrixcalc.ui.UserInterfaceTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testCreateMatrixElements(matrixcalc.ui.UserInterfaceTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at matrixcalc.ui.UserInterfaceTest.testCreateMatrixElements(UserInterfaceTest.java:63)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

@@ -76,7 +76,7 @@ public class UserInterfaceTest {
         Matrix a = null;
         Matrix b = null;
         UserInterface instance = null;
-        instance.createButtons(frame, eh, a, b);
+        instance.createButtons(frame, eh, instance);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -91,7 +91,7 @@ public class UserInterfaceTest {
         Matrix a = null;
         Matrix b = null;
         UserInterface instance = null;
-        instance.addButtonLogic(eh, a, b);
+        instance.addButtonLogic(eh, instance);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
