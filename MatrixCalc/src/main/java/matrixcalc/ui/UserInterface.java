@@ -25,8 +25,13 @@ public class UserInterface implements Runnable{
                b31, b32, b33;
     
     //Temporary array for editable matrix element creation ( a & b )
-    JTextField[] elementContainer = {a11, a12, a13, a21, a22, a23, a31, a32, a33, 
-                                  b11, b12, b13, b21, b22, b23, b31, b32, b33};
+    JTextField[][] calculationElements = {{a11, a12, a13}, 
+                                          {a21, a22, a23}, 
+                                          {a31, a32, a33}, 
+                                       
+                                          {b11, b12, b13}, 
+                                          {b21, b22, b23}, 
+                                          {b31, b32, b33}};
     
     //Textareas for result matrix ( c , 3x3 )
     JTextArea c11, c12, c13, 
@@ -34,7 +39,9 @@ public class UserInterface implements Runnable{
               c31, c32, c33;
     
     //Temporary array for result matrix creation ( c )
-    JTextArea[] resultElements = {c11, c12, c13, c21, c22, c23, c31, c32, c33};
+    JTextArea[][] resultElements = {{c11, c12, c13},
+                                    {c21, c22, c23}, 
+                                    {c31, c32, c33}};
     
     
     //Buttons for operations
@@ -72,7 +79,6 @@ public class UserInterface implements Runnable{
         frame.setVisible(true);
         
         frame.pack();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**
@@ -86,46 +92,39 @@ public class UserInterface implements Runnable{
         int x = 40;
         int y = 40;
         
-        //Used to assign cells to right rows
-        int rowCounter = 0;
+        //Used to switch x and y values for matrix b
+        int help = 0;
         
-        //Creates each element to specific row and adds them to JFrame
-        for (JTextField element : elementContainer) {
+        for (JTextField[] elementRow : calculationElements) {
             
-            //Sets correct coordinates for each cell
-            switch (rowCounter) {
-                case 3:
-                case 6:
-                    y += 35;
-                    x = 40;
-                    break;
-                case 9:
-                    y = 40;
-                    x = 225;
-                    break;
-                case 12:
-                case 15:
-                    y += 35;
-                    x = 225;
-                    break;
-                default:
-                    break;
+            for (JTextField element : elementRow) {
+                
+                //Create new field
+                element = new JTextField();
+            
+                //Set cell coordinates
+                element.setBounds(x, y, 35, 25);
+            
+                //Add cell to JFrame
+                frame.add(element);
+                
+                x += 50;
+                help++;
+                
             }
             
-            //Create new cell
-            element = new JTextField();
+            if (help == 9) {
+                x = 225;
+                y = 40;
+            } else if (help > 9) {
+                x = 225;
+                y += 35;
+            } else {
+                y += 35;
+                x = 40;
+            }
             
-            //Set cell coordinates
-            element.setBounds(x, y, 35, 25);
-            
-            //Add cell to JFrame
-            frame.add(element);
-            
-            //Change new coordinates and row number
-            x += 50;
-            rowCounter++;
         }
-        
     }
     
     /**
@@ -138,23 +137,22 @@ public class UserInterface implements Runnable{
         int x = 425;
         int y = 40;
         
-        for (JTextArea element : resultElements) {
+        for (JTextArea[] elementRow  : resultElements) {
             
-            if (x > 530){
-                y += 35;
-                x = 425;
+            for (JTextArea element : elementRow) {
+                element = new JTextArea();
+            
+                element.setEditable(false);
+            
+                element.setBounds(x, y, 35, 25);
+            
+                frame.add(element);
+                x += 50;
             }
-            
-            element = new JTextArea();
-            
-            element.setEditable(false);
-            
-            element.setBounds(x, y, 35, 25);
-            
-            frame.add(element);
-            
-            x += 50;
+            y += 35;
+            x = 425;
         }
+        
     }
     
     /**
@@ -182,10 +180,10 @@ public class UserInterface implements Runnable{
      * @param b second Matrix
      */
     void addButtonLogic(EventHandler eh, UserInterface ui) {
-        addBtn.addActionListener(new ButtonAction(eh, 0, ui));
-        subBtn.addActionListener(new ButtonAction(eh, 1, ui));
-        mulBtn.addActionListener(new ButtonAction(eh, 2, ui));
-        detBtn.addActionListener(new ButtonAction(eh, 3, ui));
+        addBtn.addActionListener(new ButtonAction(eh, 0, this.resultElements));
+        subBtn.addActionListener(new ButtonAction(eh, 1, this.resultElements));
+        mulBtn.addActionListener(new ButtonAction(eh, 2, this.resultElements));
+        detBtn.addActionListener(new ButtonAction(eh, 3, this.resultElements));
     }
     
     /**
@@ -211,12 +209,6 @@ public class UserInterface implements Runnable{
     }
     
     
-    public JTextField[] getElementContainer() {
-        return this.elementContainer;
-    }
     
-    public JTextArea[] getResultElements() {
-        return this.resultElements;
-    }
     
 }

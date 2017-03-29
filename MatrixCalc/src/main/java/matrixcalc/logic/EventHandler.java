@@ -1,14 +1,14 @@
 
 package matrixcalc.logic;
 
-import matrixcalc.logic.dataStructure.Matrix;
+import javax.swing.JTextArea;
 import matrixcalc.logic.operations.Addition;
 import matrixcalc.ui.UserInterface;
 
 
 public class EventHandler {
     
-    UserInterface ui;
+    JTextArea[][] resultMatrix;
     
     /**
      * Handles events from UI (button presses)
@@ -16,16 +16,15 @@ public class EventHandler {
      * @param event integer, which is used to identify given command
      * @param a first Matrix
      * @param b second Matrix
-     * @param ui UserInterface
      */
-    public void handleEvent(int event, Matrix a, Matrix b, UserInterface ui) {
+    public void handleEvent(int event, int[][] a, int[][] b, JTextArea[][] resultMatrix) {
         
-        this.ui = ui;
+        this.resultMatrix = resultMatrix;
         
         switch (event) {
             case 0:
                 Addition add = new Addition();
-                add.calculate(a, b, ui);
+                add.calculate(a, b, this.resultMatrix);
                 break;
             case 1:
                 System.out.println("minus");

@@ -3,67 +3,31 @@ package matrixcalc.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import matrixcalc.logic.EventHandler;
-import matrixcalc.logic.dataStructure.Matrix;
 
 
 public class ButtonAction implements ActionListener {
     
     EventHandler logic;
     int operation;
-    UserInterface ui;
-    Matrix a, b;
+    JTextArea[][] resultMatrix;
+    int[][] a, b;
     
     
-    public ButtonAction(EventHandler eh, int operationNumber, UserInterface ui) {
+    public ButtonAction(EventHandler eh, int operationNumber, JTextArea[][] resultMatrix ) {
         this.logic = eh;
         this.operation = operationNumber;
-        this.ui = ui;
-        this.a = new Matrix();
-        this.b = new Matrix();
+        this.a = new int[3][3];
+        this.b = new int[3][3];
+        this.resultMatrix = resultMatrix;
+        
     }
     
     //Get matrices element values from textfields
     void addMatricesFromUI(){
         
-        JTextField[] temp = this.ui.getElementContainer();
-        
-        int x = 0;
-        int y = 0;
-        int value;
-        
-        //For matrix a
-        for (int i = 0; i < 9; i++) {
-            
-            if (x == 3) {
-                y++;
-                x = 0;
-            }
-            
-            //Get value from textfield
-            value = Integer.parseInt(temp[i].getText());
-            
-            //Assign value to a corresponding element
-            this.a.setElementValue(x, y, i);
-            
-        }
-        
-        //For matrix b
-        for (int i = 9; i < 18; i++) {
-            
-            if (x == 3) {
-                y++;
-                x = 0;
-            }
-            
-            //Get value from textfield
-            value = Integer.parseInt(temp[i].getText());
-            
-            //Assign value to a corresponding element
-            this.b.setElementValue(x, y, i);
-            
-        }
     }
 
     @Override
@@ -73,7 +37,7 @@ public class ButtonAction implements ActionListener {
         addMatricesFromUI();
         
         //Calculate operation/event
-        this.logic.handleEvent(this.operation, this.a, this.b, this.ui);
+        this.logic.handleEvent(this.operation, this.a, this.b, this.resultMatrix);
         
     }
     
