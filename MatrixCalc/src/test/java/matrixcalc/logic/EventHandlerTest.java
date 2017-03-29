@@ -5,6 +5,7 @@
  */
 package matrixcalc.logic;
 
+import javax.swing.JTextArea;
 import matrixcalc.logic.dataStructure.Matrix;
 import matrixcalc.ui.UserInterface;
 import org.junit.After;
@@ -46,11 +47,11 @@ public class EventHandlerTest {
     public void testHandleEvent() {
         System.out.println("handleEvent");
         int event = 0;
-        Matrix a = null;
-        Matrix b = null;
+        int[][] a = null;
+        int[][] b = null;
         EventHandler instance = new EventHandler();
-        UserInterface ui = null;
-        instance.handleEvent(event, a, b, ui);
+        JTextArea[][] resultMatrix = null;
+        instance.handleEvent(event, a, b, resultMatrix);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
