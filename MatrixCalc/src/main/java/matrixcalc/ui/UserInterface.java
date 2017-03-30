@@ -57,6 +57,12 @@ public class UserInterface implements Runnable{
      */
     public UserInterface(EventHandler eh) {
         this.logic = eh;
+        
+        for (JTextField[] calculationElement : calculationElements) {
+            for (JTextField jTextField : calculationElement) {
+                jTextField = new JTextField("1");
+            }
+        }
     }
     
     @Override
