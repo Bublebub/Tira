@@ -63,6 +63,12 @@ public class UserInterface implements Runnable{
                 calculationElement[j] = new JTextField("0");
             }
         }
+        
+        for (JTextArea[] elementRow : resultElements) {
+            for (int j = 0; j < elementRow.length; j++) {
+                elementRow[j] = new JTextArea("");
+            }
+        }
     }
     
     @Override
@@ -144,7 +150,6 @@ public class UserInterface implements Runnable{
         for (JTextArea[] elementRow  : this.resultElements) {
             
             for (JTextArea element : elementRow) {
-                element = new JTextArea();
             
                 element.setEditable(false);
             

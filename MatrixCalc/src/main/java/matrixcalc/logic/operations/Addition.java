@@ -6,11 +6,11 @@ import javax.swing.JTextArea;
 public class Addition {
     
     int[][] result;
-    JTextArea[][] resultM;
+    JTextArea[][] resultMatrix;
     
     public void calculate(int[][] a, int[][] b, JTextArea[][] resultMatrix) {
         this.result = new int[3][3];
-        this.resultM = resultMatrix;
+        this.resultMatrix = resultMatrix;
         
         int x = 0;
         int y = 0;
@@ -34,11 +34,17 @@ public class Addition {
         x = 0;
         y = 0;
         
+        for (int[] p : this.result) {
+            for (int i : p) {
+                System.out.print(i + "");
+            }
+        }
+        
         //Add values to elements
-        for (JTextArea[] elementRow : this.resultM) {
+        for (JTextArea[] elementRow : this.resultMatrix) {
             
             for (JTextArea element : elementRow) {
-                element.setText("0");
+                element.setText(Integer.toString(this.result[x][y]));
                 x++;
             }
             y++;
