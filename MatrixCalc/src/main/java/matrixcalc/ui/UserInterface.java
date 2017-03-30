@@ -104,11 +104,13 @@ public class UserInterface implements Runnable{
             
                 //Set cell coordinates
                 element.setBounds(x, y, 35, 25);
-            
-                element.setText("");
                 
                 //Add cell to JFrame
                 frame.add(element);
+                
+                element.setText("0");
+                
+                System.out.println(element.getText());
                 
                 x += 50;
                 help++;
