@@ -18,7 +18,7 @@ public class Addition {
         /**
          * Calculate values
          * 
-         * Note to self: for an for-each-loop aren't the same thing
+         * Note to self: for an for-each-loop aren't the same thing:
          * for = operates directly on values
          * for-each = operates on a copy of values
          */
@@ -39,10 +39,14 @@ public class Addition {
         y = 0;
         
         //Add values to elements
-        for (JTextArea[] elementRow : this.resultMatrix) {
+        for (int i = 0; i < this.resultMatrix.length; i++) {
             
-            for (JTextArea element : elementRow) {
-                element.setText(Integer.toString(result[x][y]));
+            for (int j = 0; j < this.resultMatrix[i].length; j++) {
+                
+                /**
+                 * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
+                 */
+                this.resultMatrix[i][j].setText(Integer.toString(result[y][x]));
                 x++;
             }
             y++;

@@ -33,12 +33,7 @@ public class ButtonAction implements ActionListener {
         int[][] temp = this.a;
         
         for (JTextField[] elementRow : this.ui.getCalculationElements()) {
-            
             for (JTextField element : elementRow) {
-                
-                if (element == null) {
-                    continue;
-                }
                 
                 temp[x][y] = Integer.parseInt(element.getText());
                 
