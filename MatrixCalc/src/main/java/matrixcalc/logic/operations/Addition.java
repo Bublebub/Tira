@@ -9,19 +9,23 @@ public class Addition {
     JTextArea[][] resultMatrix;
     
     public void calculate(int[][] a, int[][] b, JTextArea[][] resultMatrix) {
-        this.result = new int[3][3];
+        result = new int[3][3];
         this.resultMatrix = resultMatrix;
         
         int x = 0;
         int y = 0;
         
-        //Calculate values
-        for (int[] row : this.result) {
+        /**
+         * Calculate values
+         * 
+         * Note to self: for an for-each-loop aren't the same thing
+         * for = operates directly on values
+         * for-each = operates on a copy of values
+         */
+        for (int i = 0; i < result.length; i++) {
             
-            for (int value : row) {
-                value = a[x][y] + b[x][y];
-                
-                System.out.print(value + " ");
+            for (int j = 0; j < result[i].length; j++) {
+                result[i][j] = a[x][y] + b[x][y];
                 
                 x++;
             }
@@ -34,23 +38,16 @@ public class Addition {
         x = 0;
         y = 0;
         
-        for (int[] p : this.result) {
-            for (int i : p) {
-                System.out.print(i + "");
-            }
-        }
-        
         //Add values to elements
         for (JTextArea[] elementRow : this.resultMatrix) {
             
             for (JTextArea element : elementRow) {
-                element.setText(Integer.toString(this.result[x][y]));
+                element.setText(Integer.toString(result[x][y]));
                 x++;
             }
             y++;
             x = 0;
         }
-        
         
     }
     
