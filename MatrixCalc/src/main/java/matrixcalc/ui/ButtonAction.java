@@ -34,7 +34,18 @@ public class ButtonAction implements ActionListener {
         
         for (JTextField[] elementRow : this.ui.getCalculationElements()) {
             
+            if (elementRow == null) {
+                break;
+            }
+            
             for (JTextField element : elementRow) {
+                
+                if (element == null) {
+                    System.out.println("ei onnistu");
+                    continue;
+                }
+                
+                System.out.println("onnistui" + element.getText());
                 
                 String text = element.getText();
                 

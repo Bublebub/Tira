@@ -16,7 +16,7 @@ public class UserInterface implements Runnable{
     EventHandler logic;
     
     //Textfields for matrix elements (a & b , 3x3)
-    JTextField a11, a12, a13,
+    JTextField a11 = new JTextField("1"), a12, a13,
                a21, a22, a23,
                a31, a32, a33,
             
@@ -95,7 +95,7 @@ public class UserInterface implements Runnable{
         //Used to switch x and y values for matrix b
         int help = 0;
         
-        for (JTextField[] elementRow : this.calculationElements) {
+        for (JTextField[] elementRow : calculationElements) {
             
             for (JTextField element : elementRow) {
                 
@@ -110,7 +110,6 @@ public class UserInterface implements Runnable{
                 
                 element.setText("0");
                 
-                System.out.println(element.getText());
                 
                 x += 50;
                 help++;
