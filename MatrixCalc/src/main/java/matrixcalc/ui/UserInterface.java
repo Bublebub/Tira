@@ -59,8 +59,8 @@ public class UserInterface implements Runnable{
         this.logic = eh;
         
         for (JTextField[] calculationElement : calculationElements) {
-            for (JTextField jTextField : calculationElement) {
-                jTextField = new JTextField("1");
+            for (int j = 0; j < calculationElement.length; j++) {
+                calculationElement[j] = new JTextField("1");
             }
         }
     }
@@ -101,20 +101,15 @@ public class UserInterface implements Runnable{
         //Used to switch x and y values for matrix b
         int help = 0;
         
-        for (JTextField[] elementRow : calculationElements) {
+        for (JTextField[] elementRow : this.calculationElements) {
             
             for (JTextField element : elementRow) {
-                
-                //Create new field
-                element = new JTextField();
             
                 //Set cell coordinates
                 element.setBounds(x, y, 35, 25);
                 
                 //Add cell to JFrame
                 frame.add(element);
-                
-                element.setText("0");
                 
                 
                 x += 50;
