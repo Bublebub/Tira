@@ -1,6 +1,12 @@
 
 package matrixcalc.logic.dataStructure;
 
+
+/**
+ * 
+ * NOT USED AT THE MOMENT
+ * 
+ */
 public class MyArrayElement {
     
     int id, value;

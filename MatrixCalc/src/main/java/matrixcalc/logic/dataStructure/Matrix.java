@@ -1,7 +1,11 @@
 
 package matrixcalc.logic.dataStructure;
 
-
+/**
+ * 
+ * NOT USED AT THE MOMENT
+ * 
+ */
 public class Matrix {
     
     int[][] elements;

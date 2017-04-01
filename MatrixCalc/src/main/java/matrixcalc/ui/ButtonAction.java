@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import matrixcalc.logic.EventHandler;
 
-
 public class ButtonAction implements ActionListener {
     
     EventHandler logic;
@@ -23,7 +22,12 @@ public class ButtonAction implements ActionListener {
         this.ui = ui;
     }
     
-    //Get matrices element values from textfields
+    /**
+     * Get matrices element values from textfields
+     * 
+     * Note to self: try to clean this part using *for* instead of *for-each*
+     * 
+     */
     void addMatricesFromUI(){
         
         int x = 0;

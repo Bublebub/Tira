@@ -3,32 +3,32 @@ package matrixcalc.logic;
 
 import javax.swing.JTextArea;
 import matrixcalc.logic.operations.Addition;
-import matrixcalc.ui.UserInterface;
-
+import matrixcalc.logic.operations.Subtraction;
 
 public class EventHandler {
     
-    JTextArea[][] resultMatrix;
+    JTextArea[][] resultMatrixVisualElements;
     
     /**
      * Handles events from UI (button presses)
      * 
-     * @param event integer, which is used to identify given command
+     * @param event used to identify given command
      * @param a first Matrix
      * @param b second Matrix
-     * @param resultMatrix contains JTextAreas, where the result of calculation will be written
+     * @param resultMatrix contains JTextAreas of result matrix elements
      */
     public void handleEvent(int event, int[][] a, int[][] b, JTextArea[][] resultMatrix) {
         
-        this.resultMatrix = resultMatrix;
+        this.resultMatrixVisualElements = resultMatrix;
         
         switch (event) {
             case 0:
                 Addition add = new Addition();
-                add.calculate(a, b, this.resultMatrix);
+                add.calculate(a, b, this.resultMatrixVisualElements);
                 break;
             case 1:
-                System.out.println("minus");
+                Subtraction sub = new Subtraction();
+                sub.calculate(a, b, resultMatrix);
                 break;
             case 2:
                 System.out.println("multi");

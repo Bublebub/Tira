@@ -9,10 +9,12 @@ import matrixcalc.logic.EventHandler;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
-
 public class UserInterface implements Runnable{
 
+    //Frame for all UI components
     JFrame frame;
+    
+    //Handles operations based on given command (button press)
     EventHandler logic;
     
     //Textfields for matrix elements (a & b , 3x3)
@@ -53,7 +55,7 @@ public class UserInterface implements Runnable{
     /**
      * Constructor, that connects program logic and UI
      * 
-     * @param eh Handles command logic
+     * @param eh Handles operations
      */
     public UserInterface(EventHandler eh) {
         this.logic = eh;
@@ -83,9 +85,13 @@ public class UserInterface implements Runnable{
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
-        //Create visible Matrix cells (JTextFields)
+        //Create visible matrix elements (for a and b matrix, JTextFields)
         createMatrixElements(frame);
+        
+        //Create visible matrix elements ((for result matrix, JTextAreas)
         createResultTextAreas(frame);
+        
+        //Create buttons for operations
         createButtons(frame, this.logic, this);
         
         frame.setVisible(true);
@@ -107,20 +113,23 @@ public class UserInterface implements Runnable{
         //Used to switch x and y values for matrix b
         int help = 0;
         
+        /**
+         * Sets element coordinates and adds them to given frame
+         * 
+         * Note to self: try to simplify this code
+         */
         for (JTextField[] elementRow : this.calculationElements) {
             
             for (JTextField element : elementRow) {
             
-                //Set cell coordinates
+                //Set element coordinates
                 element.setBounds(x, y, 35, 25);
                 
-                //Add cell to JFrame
+                //Add element to JFrame
                 frame.add(element);
-                
                 
                 x += 50;
                 help++;
-                
             }
             
             if (help == 9) {
@@ -217,6 +226,8 @@ public class UserInterface implements Runnable{
         frame.add(mulBtn);
         frame.add(detBtn);
     }
+    
+    //-------- Getters -------------
     
     public JTextField[][] getCalculationElements(){
         return this.calculationElements;

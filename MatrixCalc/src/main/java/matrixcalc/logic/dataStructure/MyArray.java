@@ -1,6 +1,11 @@
 
 package matrixcalc.logic.dataStructure;
 
+/**
+ * 
+ * NOT USED AT THE MOMENT
+ * 
+ */
 public class MyArray {
     
     int size, helper;
