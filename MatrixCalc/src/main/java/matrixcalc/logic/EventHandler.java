@@ -3,6 +3,7 @@ package matrixcalc.logic;
 
 import javax.swing.JTextArea;
 import matrixcalc.logic.operations.Addition;
+import matrixcalc.logic.operations.Multiplication;
 import matrixcalc.logic.operations.Subtraction;
 
 public class EventHandler {
@@ -31,7 +32,9 @@ public class EventHandler {
                 sub.calculate(a, b, resultMatrix);
                 break;
             case 2:
-                System.out.println("multi");
+                //System.out.println("multi");
+                Multiplication mul = new Multiplication();
+                mul.calculate(a, b, resultMatrix);
                 break;
             case 3:
                 System.out.println("det");
