@@ -3,28 +3,47 @@ package matrixcalc.logic.operations;
 
 import matrixcalc.ui.UserInterface;
 
-
 public class Determinant {
     
     int temp, result, x, y;
     
+    /**
+     * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
+     * using the Rule of Sarrus
+     * 
+     * Note to self: clean up this code
+     * 
+     * @param a first Matrix
+     * @param b second Matrix
+     * @param ui UserInterface, that contains JTextAreas for determinants
+     */
     public void calculate(int[][] a, int[][] b, UserInterface ui) {
         
         result = 0;
         
+        //Calculate final determinant value of matrix a
         result = additionValues(a) + subtractionValues(a);
         
+        //Set determinant value to correct JTextArea
         ui.getDetA().setText(Integer.toString(result));
         
         result = 0;
         
+        //Calculate final determinant value of matrix b
         result = additionValues(b) + subtractionValues(b);
         
+        //Set determinant value to correct JTextArea
         ui.getDetB().setText(Integer.toString(result));
         
         
     }
     
+    /**
+     * Value addition part of the Rule of Sarrus
+     * 
+     * @param matrix contains the values
+     * @return result value of the addition
+     */
     int additionValues(int[][] matrix) {
         
         result = y = 0;
@@ -42,10 +61,6 @@ public class Determinant {
                 
                 temp *= matrix[x][y];
                 
-                //System.out.println(temp);
-                
-                System.out.println(" " + x + " " + y);
-                
                 x++;
                 y++;
             }
@@ -55,11 +70,15 @@ public class Determinant {
             result += temp;
         }
         
-        System.out.println(" ");
-        
         return result;
     }
     
+    /**
+     * Value subtraction part of the Rule of Sarrus
+     * 
+     * @param matrix contains the values
+     * @return result value of the subtraction
+     */
     int subtractionValues(int[][] matrix) {
         
         result = x = y = 0;
@@ -76,9 +95,8 @@ public class Determinant {
                     x = matrix.length - 1;
                 }
                 
-                //System.out.println(" " + x + " " + y);
-                
                 temp *= matrix[x][y];
+                
                 x--;
                 y++;
             }
