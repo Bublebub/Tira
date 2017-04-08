@@ -63,9 +63,12 @@ public class ButtonAction implements ActionListener {
         //Get matrix values from UI
         addMatricesFromUI();
         
+        //Clear determinant fields
+        this.ui.detA.setText("");
+        this.ui.detB.setText("");
         
         //Calculate operation/event
-        this.logic.handleEvent(this.operation, this.a, this.b, this.ui.getResultElements());
+        this.logic.handleEvent(this.operation, this.a, this.b, this.ui);
         
     }
     

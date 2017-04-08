@@ -35,10 +35,10 @@ public class UserInterface implements Runnable{
                                           {b21, b22, b23}, 
                                           {b31, b32, b33}};
     
-    //Textareas for result matrix ( c , 3x3 )
+    //Textareas for result matrix ( c , 3x3 ) and matrix determinants ( a & b )
     JTextArea c11, c12, c13, 
               c21, c22, c23, 
-              c31, c32, c33;
+              c31, c32, c33, detA, detB;
     
     //Temporary array for result matrix creation ( c )
     JTextArea[][] resultElements = {{c11, c12, c13},
@@ -71,6 +71,9 @@ public class UserInterface implements Runnable{
                 elementRow[j] = new JTextArea("");
             }
         }
+        
+        detA = new JTextArea("detA");
+        detB = new JTextArea("detB");
     }
     
     @Override
@@ -172,6 +175,16 @@ public class UserInterface implements Runnable{
             x = 425;
         }
         
+        //JTextAreas for determinants
+        
+        detA.setEditable(false);
+        detB.setEditable(false);
+        
+        detA.setBounds(385, 170, 100, 30);
+        detB.setBounds(505, 170, 100, 30);
+        
+        frame.add(detA);
+        frame.add(detB);
     }
     
     /**
@@ -235,6 +248,14 @@ public class UserInterface implements Runnable{
     
     public JTextArea[][] getResultElements() {
         return this.resultElements;
+    }
+    
+    public JTextArea getDetA() {
+        return this.detA;
+    }
+    
+    public JTextArea getDetB() {
+        return this.detB;
     }
     
 }
