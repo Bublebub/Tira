@@ -28,7 +28,7 @@ public class ButtonAction implements ActionListener {
      * Note to self: try to clean this part using *for* instead of *for-each*
      * 
      */
-    void addMatricesFromUI(){
+    void fetchMatricesFromUI(){
         
         int x = 0;
         int y = 0;
@@ -39,7 +39,17 @@ public class ButtonAction implements ActionListener {
         for (JTextField[] elementRow : this.ui.getCalculationElements()) {
             for (JTextField element : elementRow) {
                 
-                temp[x][y] = Integer.parseInt(element.getText());
+                //Checks if input is invalid and changes it to "0"
+                try {
+                    temp[x][y] = Integer.parseInt(element.getText());
+                    
+                } catch (Exception e) {
+                    
+                    //Update element value
+                    element.setText("0");
+                    temp[x][y] = 0;
+                    
+                }
                 
                 //Change element
                 x++;
@@ -61,7 +71,7 @@ public class ButtonAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         //Get matrix values from UI
-        addMatricesFromUI();
+        fetchMatricesFromUI();
         
         //Clear determinant fields
         this.ui.detA.setText("");

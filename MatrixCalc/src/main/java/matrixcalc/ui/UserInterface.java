@@ -62,7 +62,7 @@ public class UserInterface implements Runnable{
         
         for (JTextField[] calculationElement : calculationElements) {
             for (int j = 0; j < calculationElement.length; j++) {
-                calculationElement[j] = new JTextField("0");
+                calculationElement[j] = new JTextField("");
             }
         }
         
