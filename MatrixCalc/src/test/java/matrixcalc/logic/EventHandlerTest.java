@@ -6,7 +6,6 @@
 package matrixcalc.logic;
 
 import javax.swing.JTextArea;
-import matrixcalc.logic.dataStructure.Matrix;
 import matrixcalc.ui.UserInterface;
 import org.junit.After;
 import org.junit.AfterClass;
