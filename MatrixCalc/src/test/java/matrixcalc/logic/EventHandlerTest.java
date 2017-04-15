@@ -46,14 +46,14 @@ public class EventHandlerTest {
     public void testHandleEvent() {
         System.out.println("handleEvent");
         int event = 0;
+        EventHandler instance = new EventHandler();
+        UserInterface ui = new UserInterface(instance);
         int[][] a = null;
         int[][] b = null;
-        EventHandler instance = new EventHandler();
         JTextArea[][] resultMatrix = null;
-        UserInterface ui = new UserInterface(instance);
-        instance.handleEvent(event, a, b, ui);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.handleEvent(event, a, b, ui);
     }
+    
+    
     
 }
