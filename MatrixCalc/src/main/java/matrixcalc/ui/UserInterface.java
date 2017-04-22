@@ -50,7 +50,8 @@ public class UserInterface implements Runnable{
     JButton addBtn = new JButton("+"), 
             subBtn = new JButton("-"), 
             mulBtn = new JButton("*"), 
-            detBtn = new JButton("det");
+            detBtnSarrus = new JButton("detSa"),
+            detBtnBareiss = new JButton("detBa");
     
     /**
      * Constructor, that connects program logic and UI
@@ -215,17 +216,19 @@ public class UserInterface implements Runnable{
         addBtn.addActionListener(new ButtonAction(eh, 0, this));
         subBtn.addActionListener(new ButtonAction(eh, 1, this));
         mulBtn.addActionListener(new ButtonAction(eh, 2, this));
-        detBtn.addActionListener(new ButtonAction(eh, 3, this));
+        detBtnSarrus.addActionListener(new ButtonAction(eh, 3, this));
+        detBtnBareiss.addActionListener(new ButtonAction(eh, 4, this));
     }
     
     /**
      * Sets button positions
      */
     void buttonPositionSetup() {
-        addBtn.setBounds(20, 200, 45, 40);
+        addBtn.setBounds(30, 200, 45, 40);
         subBtn.setBounds(80, 200, 45, 40);
         mulBtn.setBounds(130, 200, 45, 40);
-        detBtn.setBounds(180, 200, 70, 40);
+        detBtnSarrus.setBounds(180, 200, 70, 40);
+        detBtnBareiss.setBounds(255, 200, 70, 40);
     }
     
     /**
@@ -237,7 +240,8 @@ public class UserInterface implements Runnable{
         frame.add(addBtn);
         frame.add(subBtn);
         frame.add(mulBtn);
-        frame.add(detBtn);
+        frame.add(detBtnSarrus);
+        frame.add(detBtnBareiss);
     }
     
     //-------- Getters -------------

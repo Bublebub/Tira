@@ -5,10 +5,10 @@
  */
 package matrixcalc.logic.operations;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import javax.swing.JTextArea;
+import matrixcalc.logic.EventHandler;
+import matrixcalc.ui.UserInterface;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,27 +18,12 @@ import static org.junit.Assert.*;
  */
 public class AdditionTest {
     
-    public AdditionTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        
     }
 
-    @Test
-    public void testSomeMethod() {
-    }
+    
     
 }

@@ -3,7 +3,7 @@ package matrixcalc.logic.operations;
 
 import matrixcalc.ui.UserInterface;
 
-public class Determinant {
+public class DetSarrus {
     
     int temp, result, x, y;
     

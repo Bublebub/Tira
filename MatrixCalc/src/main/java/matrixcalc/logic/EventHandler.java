@@ -3,9 +3,10 @@ package matrixcalc.logic;
 
 import javax.swing.JTextArea;
 import matrixcalc.logic.operations.Addition;
+import matrixcalc.logic.operations.DetBareiss;
 import matrixcalc.logic.operations.Multiplication;
 import matrixcalc.logic.operations.Subtraction;
-import matrixcalc.logic.operations.Determinant;
+import matrixcalc.logic.operations.DetSarrus;
 import matrixcalc.ui.UserInterface;
 
 public class EventHandler {
@@ -38,9 +39,13 @@ public class EventHandler {
                 mul.calculate(a, b, this.resultMatrixVisualElements);
                 break;
             case 3:
-                Determinant det = new Determinant();
-                det.calculate(a, b, ui);
+                DetSarrus detSa = new DetSarrus();
+                //Calculate determinants using the Rule of Sarrus
+                detSa.calculate(a, b, ui);
                 break;
+            case 4:
+                DetBareiss detBa = new DetBareiss();
+                detBa.calculate(a, b, ui);
             default:
                 break;
         }

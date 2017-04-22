@@ -48,7 +48,9 @@ public class Addition {
                  * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
                  */
                 this.resultMatrixVisualElements[y][x].setText(Integer.toString(resultMatrixValues[y][x]));
+                
             }
+            
         }
         
     }
