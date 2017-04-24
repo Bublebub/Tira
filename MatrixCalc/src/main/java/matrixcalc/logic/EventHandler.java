@@ -13,7 +13,7 @@ public class EventHandler {
     /**
      * Handles events from UI (button presses)
      * 
-     * @param event used to identify given command
+     * @param event used to identify given command (values: 0 = addition, 1 = subtraction, 2 = multiplication, 3 = determinant)
      * @param a first Matrix
      * @param b second Matrix
      * @param resultMatrix contains JTextAreas of result matrix elements
@@ -32,7 +32,6 @@ public class EventHandler {
                 sub.calculate(a, b, resultMatrix);
                 break;
             case 2:
-                //System.out.println("multi");
                 Multiplication mul = new Multiplication();
                 mul.calculate(a, b, resultMatrix);
                 break;
