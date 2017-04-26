@@ -1,11 +1,9 @@
-matrixcalc\logic\dataStructure\MyArray.class
 matrixcalc\logic\operations\Addition.class
 matrixcalc\Main.class
-matrixcalc\logic\dataStructure\Matrix.class
+matrixcalc\logic\operations\DetSarrus.class
 matrixcalc\ui\UserInterface.class
 matrixcalc\logic\operations\Multiplication.class
 matrixcalc\logic\operations\Subtraction.class
 matrixcalc\ui\ButtonAction.class
-matrixcalc\logic\operations\Determinant.class
 matrixcalc\logic\EventHandler.class
-matrixcalc\logic\dataStructure\MyArrayElement.class
+matrixcalc\logic\operations\DetBareiss.class

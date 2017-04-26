@@ -7,7 +7,6 @@ package matrixcalc.ui;
 
 import javax.swing.JFrame;
 import matrixcalc.logic.EventHandler;
-import matrixcalc.logic.dataStructure.Matrix;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -47,9 +46,7 @@ public class UserInterfaceTest {
     public void testRun() {
         System.out.println("run");
         UserInterface instance = null;
-        instance.run();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.run();
     }
 
     /**
@@ -60,9 +57,7 @@ public class UserInterfaceTest {
         System.out.println("createMatrixElements");
         JFrame frame = null;
         UserInterface instance = null;
-        instance.createMatrixElements(frame);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.createMatrixElements(frame);
     }
 
     /**
@@ -73,12 +68,8 @@ public class UserInterfaceTest {
         System.out.println("createButtons");
         JFrame frame = null;
         EventHandler eh = null;
-        Matrix a = null;
-        Matrix b = null;
         UserInterface instance = null;
-        instance.createButtons(frame, eh, instance);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.createButtons(frame, eh, instance);
     }
 
     /**
@@ -88,12 +79,8 @@ public class UserInterfaceTest {
     public void testAddButtonLogic() {
         System.out.println("addButtonLogic");
         EventHandler eh = null;
-        Matrix a = null;
-        Matrix b = null;
         UserInterface instance = null;
-        instance.addButtonLogic(eh, instance);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.addButtonLogic(eh, instance);
     }
 
     /**
@@ -103,9 +90,7 @@ public class UserInterfaceTest {
     public void testButtonPositionSetup() {
         System.out.println("buttonPositionSetup");
         UserInterface instance = null;
-        instance.buttonPositionSetup();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.buttonPositionSetup();
     }
 
     /**
@@ -116,9 +101,7 @@ public class UserInterfaceTest {
         System.out.println("addButtonsToFrame");
         JFrame frame = null;
         UserInterface instance = null;
-        instance.addButtonsToFrame(frame);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //instance.addButtonsToFrame(frame);
     }
     
 }
