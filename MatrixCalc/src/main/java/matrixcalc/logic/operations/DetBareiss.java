@@ -10,7 +10,6 @@ public class DetBareiss {
      * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
      * using the Bareiss algorithm
      * 
-     * Note to self: clean up this code
      * 
      * @param a first Matrix
      * @param b second Matrix
@@ -18,8 +17,9 @@ public class DetBareiss {
      */
     public void calculate(int[][] a, int[][] b, UserInterface ui) {
         
-        System.out.println("a " + bareiss(a));
-        System.out.println("b " + bareiss(b));
+        ui.getDetA().setText(Integer.toString(bareiss(a)));
+        ui.getDetB().setText(Integer.toString(bareiss(b)));
+        
     }
     
     /**
@@ -30,33 +30,51 @@ public class DetBareiss {
      */
     int bareiss(int[][] matrix){
         
+        //Divider
         int p = 1;
+        //Used to determine, which row should be skipped
+        int skipRow = 0;
         
-        boolean change = setupRows(0, matrix);
-        
-        
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+        //For each calculation
+        for (int calcNum = 0; calcNum < matrix.length; calcNum++) {
+            
+            //Used to check for determinant value 0
+            boolean change = setupRows(calcNum, matrix);
+            
+            //All the rows are valid
+            if (change) {
                 
-                //X ja Y??
-                System.out.print(matrix[j][i] + " ");
+                //For each row
+                for (int i = 0; i < matrix.length; i++) {
+            
+                    //For each element
+                    for (int j = 0; j < matrix.length; j++) {
+                    
+                        if (i == skipRow) {
+                            continue;
+                        } else {
+                            matrix[j][i] = (matrix[calcNum][calcNum] * matrix[j][i]) - (matrix[j][calcNum] * matrix[calcNum][i]);
+                            matrix[j][i] /= p;
+                        }
+                    }
+                    
+                }
+                
+            } else {
+                return 0;
             }
             
-            System.out.println("");
+            p = matrix[calcNum][calcNum];
+            skipRow++;
         }
         
-        System.out.println("");
-        
-        if (change) {
-            p = 200;
-        }
-        
-        return p;
-        
+        //Return the final element of the matrix ( == determinant)
+        return matrix[matrix.length - 1][matrix.length - 1];
     }
     
     /**
      * Changes rows if needed by the algorithm (change and * -1)
+     * Also checks for rows full of zeroes (guaranteed zero determinant)
      * 
      * @param startingRow row number, where sorting is started from
      * @param matrix matrix to be sorted
@@ -113,7 +131,6 @@ public class DetBareiss {
                 }
                 
             }
-            
             
             nonZeroCounter = 0;
         }
