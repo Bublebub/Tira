@@ -1,24 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package matrixcalc.logic.operations;
 
-import matrixcalc.ui.UserInterface;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Elmeri
- */
+
 public class DetBareissTest {
-    
     
     @Test
     public void setupRowsWorksWithStartingRowFullOfZeroes() {
@@ -51,7 +38,7 @@ public class DetBareissTest {
     @Test
     public void testBareiss() {
         
-        int[][] a = {{1, 4, 9},{20, 50, 9},{3, 6, 8}};
+        int[][] a = {{1, 4, 9}, {20, 50, 9}, {3, 6, 8}};
         DetBareiss instance = new DetBareiss();
         
         assertEquals(-456, instance.bareiss(a));
