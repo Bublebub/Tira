@@ -5,4 +5,3 @@ matrixcalc\ui\ButtonActionTest.class
 matrixcalc\logic\operations\AdditionTest.class
 matrixcalc\MainTest.class
 matrixcalc\logic\operations\MultiplicationTest.class
-matrixcalc\logic\operations\DeterminantTest.class

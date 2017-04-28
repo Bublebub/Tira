@@ -5,6 +5,7 @@
  */
 package matrixcalc.logic.operations;
 
+import matrixcalc.ui.UserInterface;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,29 +17,13 @@ import static org.junit.Assert.*;
  *
  * @author Elmeri
  */
-public class DeterminantTest {
+public class DetSarrusTest {
     
-    public DeterminantTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
     @Before
     public void setUp() {
     }
     
-    @After
-    public void tearDown() {
-    }
-
-    @Test
-    public void testSomeMethod() {
-    }
+    
     
 }

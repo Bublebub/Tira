@@ -34,12 +34,41 @@ public class DetBareiss {
         int p = 1;
         //Used to determine, which row should be skipped
         int skipRow = 0;
+        //Use previous matrix to get a new one
+        int[][] tempMatrix = new int[matrix.length][matrix.length];
         
         //For each calculation
         for (int calcNum = 0; calcNum < matrix.length; calcNum++) {
             
             //Used to check for determinant value 0
             boolean change = setupRows(calcNum, matrix);
+            
+            int x = 0;
+            int y = 0;
+            
+            /**
+             * Copies matrix, so that it can be used to perform the calculation
+             * 
+             * Note to self: "tempMatrix = matrix" is a reference, doesn't work.
+             * 
+             */
+            for (int[] row : matrix) {
+                for (int element : row) {
+                    tempMatrix[y][x] = element;
+                    x++;
+                }
+                x = 0;
+                y++;
+            }
+            
+            //Find column number, row number == calcNum
+            int column = matrix.length;
+            for (int i = 0; i < matrix.length; i++) {
+                if (matrix[i][calcNum] != 0) {
+                    column = i;
+                    break;
+                }
+            }
             
             //All the rows are valid
             if (change) {
@@ -53,7 +82,8 @@ public class DetBareiss {
                         if (i == skipRow) {
                             continue;
                         } else {
-                            matrix[j][i] = (matrix[calcNum][calcNum] * matrix[j][i]) - (matrix[j][calcNum] * matrix[calcNum][i]);
+                            
+                            matrix[j][i] = (tempMatrix[column][calcNum] * tempMatrix[j][i]) - (tempMatrix[column][i] * tempMatrix[j][calcNum]);
                             matrix[j][i] /= p;
                         }
                     }
@@ -64,7 +94,7 @@ public class DetBareiss {
                 return 0;
             }
             
-            p = matrix[calcNum][calcNum];
+            p = matrix[column][calcNum];
             skipRow++;
         }
         

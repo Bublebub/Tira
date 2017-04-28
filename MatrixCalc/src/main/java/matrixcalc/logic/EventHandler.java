@@ -45,6 +45,7 @@ public class EventHandler {
                 break;
             case 4:
                 DetBareiss detBa = new DetBareiss();
+                //Calculate determinants using the Bareiss algorithm
                 detBa.calculate(a, b, ui);
             default:
                 break;

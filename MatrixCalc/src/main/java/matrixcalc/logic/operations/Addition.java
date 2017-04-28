@@ -42,7 +42,7 @@ public class Addition {
         //Add values to elements
         for (int y = 0; y < this.resultMatrixVisualElements.length; y++) {
             
-            for (int x = 0; x < this.resultMatrixVisualElements[y].length; x++) {
+            for (int x = 0; x < this.resultMatrixVisualElements.length; x++) {
                 
                 /**
                  * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
