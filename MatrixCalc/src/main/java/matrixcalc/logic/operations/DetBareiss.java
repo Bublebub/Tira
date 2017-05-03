@@ -10,7 +10,6 @@ public class DetBareiss {
      * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
      * using the Bareiss algorithm
      * 
-     * 
      * @param a first Matrix
      * @param b second Matrix
      * @param ui UserInterface, that contains JTextAreas for determinants

@@ -82,7 +82,7 @@ public class UserInterface implements Runnable{
         
         frame = new JFrame();
         
-        frame.setPreferredSize(new Dimension(640,480));
+        frame.setPreferredSize(new Dimension(640,300));
         frame.setResizable(false);
         
         frame.setLayout(null);
@@ -224,11 +224,11 @@ public class UserInterface implements Runnable{
      * Sets button positions
      */
     void buttonPositionSetup() {
-        addBtn.setBounds(30, 200, 45, 40);
-        subBtn.setBounds(80, 200, 45, 40);
-        mulBtn.setBounds(130, 200, 45, 40);
-        detBtnSarrus.setBounds(180, 200, 70, 40);
-        detBtnBareiss.setBounds(255, 200, 70, 40);
+        addBtn.setBounds(40, 165, 45, 40);
+        subBtn.setBounds(90, 165, 45, 40);
+        mulBtn.setBounds(140, 165, 45, 40);
+        detBtnSarrus.setBounds(190, 165, 70, 40);
+        detBtnBareiss.setBounds(265, 165, 70, 40);
     }
     
     /**

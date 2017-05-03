@@ -30,29 +30,25 @@ public class Addition {
          * for-each = operates on a copy of values
          */
         for (int y = 0; y < resultMatrixValues.length; y++) {
-            
             for (int x = 0; x < resultMatrixValues[y].length; x++) {
+                
                 resultMatrixValues[y][x] = a[x][y] + b[x][y];
                 
             }
-            
         }
         
-        
-        //Add values to elements
+        /**
+         * Add values to elements
+         * 
+         * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
+         */
         for (int y = 0; y < this.resultMatrixVisualElements.length; y++) {
-            
             for (int x = 0; x < this.resultMatrixVisualElements.length; x++) {
                 
-                /**
-                 * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
-                 */
                 this.resultMatrixVisualElements[y][x].setText(Integer.toString(resultMatrixValues[y][x]));
                 
             }
-            
         }
-        
     }
     
 }
