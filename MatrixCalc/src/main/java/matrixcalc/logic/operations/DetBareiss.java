@@ -33,8 +33,7 @@ public class DetBareiss {
         int p = 1;
         //Used to determine, which row should be skipped
         int skipRow = 0;
-        //Use previous matrix to get a new one
-        int[][] tempMatrix = new int[matrix.length][matrix.length];
+        int[][] tempMatrix;
         
         //For each calculation
         for (int calcNum = 0; calcNum < matrix.length; calcNum++) {
@@ -42,52 +41,17 @@ public class DetBareiss {
             //Used to check for determinant value 0
             boolean change = setupRows(calcNum, matrix);
             
-            int x = 0;
-            int y = 0;
-            
-            /**
-             * Copies matrix, so that it can be used to perform the calculation
-             * 
-             * Note to self: "tempMatrix = matrix" is a reference, doesn't work.
-             * 
-             */
-            for (int[] row : matrix) {
-                for (int element : row) {
-                    tempMatrix[y][x] = element;
-                    x++;
-                }
-                x = 0;
-                y++;
-            }
+            //Copies matrix, so that it can be used to perform the calculation
+            tempMatrix = copyMatrix(matrix);
             
             //Find column number, row number == calcNum
-            int column = matrix.length;
-            for (int i = 0; i < matrix.length; i++) {
-                if (matrix[i][calcNum] != 0) {
-                    column = i;
-                    break;
-                }
-            }
+            int column = findColumn(matrix, calcNum);
             
             //All the rows are valid
             if (change) {
                 
-                //For each row
-                for (int i = 0; i < matrix.length; i++) {
-            
-                    //For each element
-                    for (int j = 0; j < matrix.length; j++) {
-                    
-                        if (i == skipRow) {
-                            continue;
-                        } else {
-                            
-                            matrix[j][i] = (tempMatrix[column][calcNum] * tempMatrix[j][i]) - (tempMatrix[column][i] * tempMatrix[j][calcNum]);
-                            matrix[j][i] /= p;
-                        }
-                    }
-                    
-                }
+                //Calculates the values for new matrix
+                calculateNewMatrix(matrix, tempMatrix, skipRow, column, calcNum, p);
                 
             } else {
                 return 0;
@@ -101,6 +65,8 @@ public class DetBareiss {
         return matrix[matrix.length - 1][matrix.length - 1];
     }
     
+    
+    
     /**
      * Changes rows if needed by the algorithm (change and * -1)
      * Also checks for rows full of zeroes (guaranteed zero determinant)
@@ -111,18 +77,11 @@ public class DetBareiss {
      */
     boolean setupRows(int startingRow, int[][] matrix) {
         
-        int firstNonZero = 0;
         
         //-----------------------ZERO CHECK START-----------------------------------------
         
         //Finds the position of first non zero element
-        for (int i = 0; i < matrix.length; i++) {
-            if (matrix[i][startingRow] != 0) {
-                break;
-            } else {
-                firstNonZero++;
-            }
-        }
+        int firstNonZero = findFirstNonZero(matrix, startingRow);
         
         //Starting row is full of zeroes, return false
         if (firstNonZero == matrix.length) {
@@ -196,6 +155,72 @@ public class DetBareiss {
         return true;
     }
     
+    int findFirstNonZero(int[][] matrix, int startingRow) {
+        int firstNonZero = 0;
+        
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][startingRow] != 0) {
+                break;
+            } else {
+                firstNonZero++;
+            }
+        }
+        return firstNonZero;
+    }
     
+    
+    
+    /**
+     * Copies and returns given matrix
+     * 
+     * @param matrix matrix to be copied
+     * @return copy of matrix
+     */
+    int[][] copyMatrix(int[][] matrix) {
+        
+        int x = 0;
+        int y = 0;
+        int[][] newMatrix = new int[matrix.length][matrix.length];
+        
+        for (int[] row : matrix) {
+            for (int element : row) {
+                newMatrix[y][x] = element;
+                x++;
+            }
+            x = 0;
+            y++;
+        }
+        
+        return newMatrix;
+    }
+    
+    //Finds the column number for the formula of calculation
+    int findColumn(int[][] matrix, int calcNum) {
+        int column = matrix.length;
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][calcNum] != 0) {
+                column = i;
+                break;
+            }
+        }
+        return column;
+    }
+    
+    void calculateNewMatrix(int[][] matrix, int[][] tempMatrix, int skipRow, int column, int calcNum, int p) {
+        //For each row
+        for (int i = 0; i < matrix.length; i++) {
+            
+            //For each element
+            for (int j = 0; j < matrix.length; j++) {
+                    
+                if (i == skipRow) {
+                    continue;
+                } else {
+                    matrix[j][i] = (tempMatrix[column][calcNum] * tempMatrix[j][i]) - (tempMatrix[column][i] * tempMatrix[j][calcNum]);
+                    matrix[j][i] /= p;
+                }
+            }
+        }
+    }
     
 }
