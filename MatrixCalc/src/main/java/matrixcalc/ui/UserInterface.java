@@ -9,6 +9,10 @@ import matrixcalc.logic.EventHandler;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class UserInterface implements Runnable{
 
     //Frame for all UI components
@@ -237,7 +241,7 @@ public class UserInterface implements Runnable{
     }
     
     //-------- Getters -------------
-    
+
     public JTextField[][] getCalculationElements(){
         return this.calculationElements;
     }

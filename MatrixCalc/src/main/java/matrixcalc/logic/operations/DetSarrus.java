@@ -3,12 +3,16 @@ package matrixcalc.logic.operations;
 
 import matrixcalc.ui.UserInterface;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class DetSarrus {
     
     int temp, result, x, y;
     
     /**
-     * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
+     * Calculates and prints out the determinants of a &amp; b matrices (to JTextAreas)
      * using the Rule of Sarrus
      * 
      * @param a first Matrix

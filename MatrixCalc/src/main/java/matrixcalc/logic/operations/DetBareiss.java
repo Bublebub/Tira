@@ -3,11 +3,14 @@ package matrixcalc.logic.operations;
 
 import matrixcalc.ui.UserInterface;
 
-
+/**
+ *
+ * @author Elmeri
+ */
 public class DetBareiss {
     
     /**
-     * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
+     * Calculates and prints out the determinants of a &amp; b matrices (to JTextAreas)
      * using the Bareiss algorithm
      * 
      * @param a first Matrix

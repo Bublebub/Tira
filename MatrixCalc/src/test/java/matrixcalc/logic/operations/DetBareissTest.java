@@ -4,9 +4,15 @@ package matrixcalc.logic.operations;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
+/**
+ *
+ * @author Elmeri
+ */
 public class DetBareissTest {
     
+    /**
+     * setupRows recognizes a starting row full of zeroes
+     */
     @Test
     public void setupRowsWorksWithStartingRowFullOfZeroes() {
         
@@ -16,6 +22,9 @@ public class DetBareissTest {
         assertEquals(false, instance.setupRows(0, a));
     }
     
+    /**
+     * setupRows recognizes a row full of zeroes (other than starting row)
+     */
     @Test
     public void setupRowsWorksWhenSomeOtherRowIsFullOfZeroes() {
         
@@ -25,6 +34,9 @@ public class DetBareissTest {
         assertEquals(false, instance.setupRows(0, a));
     }
     
+    /**
+     * bareiss calculates determinant 0, even if there are no rows full of zeroes
+     */
     @Test
     public void bareissRecognizesZeroDeterminantWithoutRowsFullOfZeroes() {
         
@@ -35,6 +47,9 @@ public class DetBareissTest {
         
     }
     
+    /**
+     * bareiss gives the correct answer
+     */
     @Test
     public void testBareiss() {
         

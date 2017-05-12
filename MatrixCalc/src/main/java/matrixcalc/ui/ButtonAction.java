@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import matrixcalc.logic.EventHandler;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class ButtonAction implements ActionListener {
     
     EventHandler logic;
@@ -13,6 +17,13 @@ public class ButtonAction implements ActionListener {
     int operation;
     int[][] a, b;
     
+    /**
+     * Constructor
+     *
+     * @param eh EventHandler of the program
+     * @param operationNumber number to identify the operation of a button
+     * @param ui Userinterface of the program
+     */
     public ButtonAction(EventHandler eh, int operationNumber, UserInterface ui ) {
         this.logic = eh;
         this.operation = operationNumber;

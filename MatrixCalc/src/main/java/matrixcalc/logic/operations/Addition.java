@@ -3,6 +3,10 @@ package matrixcalc.logic.operations;
 
 import javax.swing.JTextArea;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class Addition {
     
     //values for result matrix
@@ -12,7 +16,7 @@ public class Addition {
     JTextArea[][] resultMatrixVisualElements;
     
     /**
-     * Performs addition operation on matrices (a & b) and puts the values to result matrix elements
+     * Performs addition operation on matrices (a &amp; b) and puts the values to result matrix elements
      * 
      * @param a First matrix
      * @param b Second matrix

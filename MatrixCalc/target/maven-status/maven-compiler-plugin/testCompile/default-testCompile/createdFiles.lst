@@ -3,5 +3,7 @@ matrixcalc\ui\UserInterfaceTest.class
 matrixcalc\logic\EventHandlerTest.class
 matrixcalc\ui\ButtonActionTest.class
 matrixcalc\logic\operations\AdditionTest.class
+matrixcalc\logic\operations\DetBareissTest.class
 matrixcalc\MainTest.class
+matrixcalc\logic\operations\DetSarrusTest.class
 matrixcalc\logic\operations\MultiplicationTest.class

@@ -5,6 +5,10 @@ import javax.swing.JTextArea;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class MultiplicationTest {
     
     JTextArea c11, c12, c13, c21, c22, c23, c31, c32, c33;
@@ -13,6 +17,9 @@ public class MultiplicationTest {
                                 {c21, c22, c23}, 
                                 {c31, c32, c33}};
     
+    /**
+     * calculate gives the correct answer
+     */
     @Test
     public void testCalculate() {
         

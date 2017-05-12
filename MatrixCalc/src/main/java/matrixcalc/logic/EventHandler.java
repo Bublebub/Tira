@@ -9,6 +9,10 @@ import matrixcalc.logic.operations.Subtraction;
 import matrixcalc.logic.operations.DetSarrus;
 import matrixcalc.ui.UserInterface;
 
+/**
+ *
+ * @author Elmeri
+ */
 public class EventHandler {
     
     JTextArea[][] resultMatrixVisualElements;
