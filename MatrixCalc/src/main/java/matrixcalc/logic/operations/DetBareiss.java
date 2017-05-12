@@ -9,6 +9,7 @@ import matrixcalc.ui.UserInterface;
  */
 public class DetBareiss {
     
+    
     /**
      * Calculates and prints out the determinants of a &amp; b matrices (to JTextAreas)
      * using the Bareiss algorithm
@@ -210,10 +211,10 @@ public class DetBareiss {
         int tempRow[][] = new int[matrix.length][1];
         
         for (int i = 0; i < matrix.length; i++) {
-                tempRow[i][0] = matrix[i][firstRow];
-                matrix[i][firstRow] = matrix[i][secondRow];
-                matrix[i][secondRow] = tempRow[i][0];
-            }
+            tempRow[i][0] = matrix[i][firstRow];
+            matrix[i][firstRow] = matrix[i][secondRow];
+            matrix[i][secondRow] = tempRow[i][0];
+        }
     }
     
     /**
