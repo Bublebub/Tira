@@ -13,7 +13,6 @@ public class ButtonAction implements ActionListener {
     int operation;
     int[][] a, b;
     
-    
     public ButtonAction(EventHandler eh, int operationNumber, UserInterface ui ) {
         this.logic = eh;
         this.operation = operationNumber;
@@ -24,9 +23,6 @@ public class ButtonAction implements ActionListener {
     
     /**
      * Get matrices element values from textfields
-     * 
-     * Note to self: try to clean this part using *for* instead of *for-each*
-     * 
      */
     void fetchMatricesFromUI(){
         
@@ -48,9 +44,7 @@ public class ButtonAction implements ActionListener {
                     //Update element value
                     element.setText("0");
                     temp[x][y] = 0;
-                    
                 }
-                
                 //Change element
                 x++;
             }
@@ -79,7 +73,6 @@ public class ButtonAction implements ActionListener {
         
         //Calculate operation/event
         this.logic.handleEvent(this.operation, this.a, this.b, this.ui);
-        
     }
     
 }

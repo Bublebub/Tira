@@ -11,8 +11,6 @@ public class DetSarrus {
      * Calculates and prints out the determinants of a & b matrices (to JTextAreas)
      * using the Rule of Sarrus
      * 
-     * Note to self: clean up this code
-     * 
      * @param a first Matrix
      * @param b second Matrix
      * @param ui UserInterface, that contains JTextAreas for determinants
@@ -60,13 +58,10 @@ public class DetSarrus {
                 }
                 
                 temp *= matrix[x][y];
-                
                 x++;
                 y++;
             }
-            
             y = 0;
-            
             result += temp;
         }
         
@@ -86,7 +81,6 @@ public class DetSarrus {
         for (int i = 0; i < matrix.length; i++) {
         
             temp = 1;
-            
             x = (matrix.length - 1) - i;
             
             for (int j = 0; j < matrix.length; j++) {
@@ -96,13 +90,10 @@ public class DetSarrus {
                 }
                 
                 temp *= matrix[x][y];
-                
                 x--;
                 y++;
             }
-            
             y = 0;
-            
             result -= temp;
         }
         

@@ -117,11 +117,7 @@ public class UserInterface implements Runnable{
         //Used to switch x and y values for matrix b
         int help = 0;
         
-        /**
-         * Sets element coordinates and adds them to given frame
-         * 
-         * Note to self: try to simplify this code
-         */
+        //Sets element coordinates and adds them to given frame
         for (JTextField[] elementRow : this.calculationElements) {
             
             for (JTextField element : elementRow) {
@@ -165,9 +161,7 @@ public class UserInterface implements Runnable{
             for (JTextArea element : elementRow) {
             
                 element.setEditable(false);
-            
                 element.setBounds(x, y, 35, 25);
-            
                 frame.add(element);
                 
                 x += 50;
@@ -177,7 +171,6 @@ public class UserInterface implements Runnable{
         }
         
         //JTextAreas for determinants
-        
         detA.setEditable(false);
         detB.setEditable(false);
         
@@ -206,7 +199,6 @@ public class UserInterface implements Runnable{
      * Adds actionlisteners to buttons
      * 
      * VALUES: 0 = addition, 1 = subtraction, 2 = multiplication, 3 = determinant
-     * Note to self; change values to constants!
      * 
      * @param eh EventHandler, that handles button events
      * @param a first Matrix

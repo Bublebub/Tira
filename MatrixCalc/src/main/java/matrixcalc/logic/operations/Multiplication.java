@@ -3,7 +3,6 @@ package matrixcalc.logic.operations;
 
 import javax.swing.JTextArea;
 
-
 public class Multiplication {
     
     //values for result matrix
@@ -23,10 +22,7 @@ public class Multiplication {
         resultMatrixValues = new int[3][3];
         this.resultMatrixVisualElements = resultMatrix;
         
-        /**
-         * Calculate values
-         * 
-         */
+        //Calculate values
         for (int y = 0; y < resultMatrixValues.length; y++) {
             
             for (int x = 0; x < resultMatrixValues[y].length; x++) {
@@ -36,19 +32,13 @@ public class Multiplication {
             
         }
         
-        
         //Add values to elements
         for (int y = 0; y < this.resultMatrixVisualElements.length; y++) {
             
             for (int x = 0; x < this.resultMatrixVisualElements[y].length; x++) {
                 
-                /**
-                 * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
-                 */
                 this.resultMatrixVisualElements[y][x].setText(Integer.toString(resultMatrixValues[y][x]));
             }
         }
-        
     }
-    
 }

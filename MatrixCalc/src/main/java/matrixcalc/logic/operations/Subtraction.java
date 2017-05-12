@@ -22,31 +22,19 @@ public class Subtraction {
         resultMatrixValues = new int[3][3];
         this.resultMatrixVisualElements = resultMatrix;
         
-        /**
-         * Calculate values
-         * 
-         * Note to self: for an for-each-loop aren't the same thing:
-         * for = operates directly on values
-         * for-each = operates on a copy of values
-         */
+        //Calculate values
         for (int y = 0; y < resultMatrixValues.length; y++) {
             
             for (int x = 0; x < resultMatrixValues[y].length; x++) {
                 resultMatrixValues[y][x] = a[x][y] - b[x][y];
-                
             }
-            
         }
-        
         
         //Add values to elements
         for (int y = 0; y < this.resultMatrixVisualElements.length; y++) {
             
             for (int x = 0; x < this.resultMatrixVisualElements[y].length; x++) {
                 
-                /**
-                 * Note to self: Find out where and why coordinates/matrix elements have changed (UI vs Logic structure)
-                 */
                 this.resultMatrixVisualElements[y][x].setText(Integer.toString(resultMatrixValues[y][x]));
             }
         }
